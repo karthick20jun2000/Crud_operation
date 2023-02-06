@@ -1,0 +1,68 @@
+{
+  "posts": [
+    {
+      "firstName": "Raghu",
+      "lastName": "V",
+      "companyName": "JBR JUNIOR CLG",
+      "number": "9567661086",
+      "email": "Raghu@gmail.com",
+      "id": 9
+    },
+    {
+      "firstName": "karthick",
+      "lastName": "J",
+      "companyName": "nnn multinational company",
+      "number": "6383810126",
+      "email": "karthi@gmail.com",
+      "id": 10
+    },
+    {
+      "firstName": "karthi",
+      "lastName": "J",
+      "companyName": "tcs company",
+      "number": "9597661086",
+      "email": "Karthi@gmail.com",
+      "id": 11
+    },
+    {
+      "firstName": "karthick",
+      "lastName": "J",
+      "companyName": "infosys company",
+      "number": "9789625620",
+      "email": "Karthi@gmail.com",
+      "id": 12
+    },
+    {
+      "firstName": "Raghu",
+      "lastName": "V",
+      "companyName": "JBR JUNIOR CLG",
+      "number": "6383810126",
+      "email": "Raghu@gmail.com",
+      "id": 13
+    },
+    {
+      "firstName": "Raghu",
+      "lastName": "k",
+      "companyName": "nnn Net solution pvt limitted company",
+      "number": "6383810126",
+      "email": "Karthi@gmail.com",
+      "id": 14
+    },
+    {
+      "firstName": "karthiick",
+      "lastName": "J",
+      "companyName": "mutlinational company",
+      "number": "9789625620",
+      "email": "karthi20jun@gmail.com",
+      "id": 15
+    },
+    {
+      "firstName": "karthiick",
+      "lastName": "J",
+      "companyName": "nnn Net solution pvt limitted company",
+      "number": "23226563636",
+      "email": "bhjuhhu@gmail.com",
+      "id": 16
+    }
+  ]
+}

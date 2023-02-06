@@ -1,0 +1,29 @@
+<div class="row justify-content-center">
+  <div class="col-12 col-lg-4">
+    <h3>Update Data</h3>
+    <form>
+      <div class="mb-3">
+        <label for="firstName" class="form-label">firstName</label>
+        <input type="text" name="firstName" [(ngModel)]="employee.firstName" class="form-control" id="firstName">
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">lastName</label>
+        <input type="text" class="form-control" name="lastName" [(ngModel)]="employee.lastName" id="lastName">
+      </div>
+      <div class="mb-3">
+        <label for="companyName" class="form-label">companyName</label>
+        <input type="text" class="form-control" name="companyName" [(ngModel)]="employee.companyName" id="companyName">
+      </div>
+      <div class="mb-3">
+        <label for="number" class="form-label">number</label>
+        <input type="tel" class="form-control" name="number" [(ngModel)]="employee.number" id="number">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">email</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="employee.email" id="email">
+      </div>
+      <button class="btn btn-primary" (click)="updateEmployeeDetials()">submit</button>
+      <button class="btn btn-primary" routerLink="/" type="submit">back</button>
+    </form>
+  </div>
+</div>
