@@ -27,45 +27,30 @@ getData(){
 }
   ngOnInit(): void {
     this.getData()
-    this.clickHere()
     this.getEmployeeDetials()
   }
-
-
-  clickHere(){
-    if (this.forms.invalid) {
-      return
-    }
-    console.log(this.forms.value)
-  }
-addEmployeeDetials(data:datamodel){
-  
-
-  this.apiServe.addEmployeeDetials(data)
-  
-  .subscribe((res=>{
-   
-    alert('add succes fully')
-    
-    this.forms.reset()
-  }),error=>{alert('wents some worng')})
+//get data to employee detials
+ async getEmployeeDetials(){
+  // this.apiServe.getEployeeDetials().subscribe(res=>{
+  //   this.data=res;
+  // })
+  const result:any=await this.apiServe.getEployeeDetials()
+  this.data=result
+}
+//delete employee detials
+async deleteEmployeeDetials(id:number){
+  // this.apiServe.deleteEployeeDetials(id).subscribe(res=>{
+  //   console.log(res)
+  //   this.getEmployeeDetials()
+  // })
+  try {
+    const result:any =await this.apiServe.deleteEployeeDetials(id)
+  // this.data=result
   this.getEmployeeDetials()
- 
-}
-
-getEmployeeDetials(){
-  this.apiServe.getEployeeDetials().subscribe(res=>{
-    this.data=res;
-  })
-}
-
-deleteEmployeeDetials(id:number){
-  this.apiServe.deleteEployeeDetials(id).subscribe(res=>{
-    console.log(res)
-    this.getEmployeeDetials()
-  })
-
   console.log('delete')
+  } catch (error) {
+    
+  }
 }
 
 }

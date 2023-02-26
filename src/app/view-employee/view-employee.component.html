@@ -1,52 +1,14 @@
 <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-        <button class="btn btn-outline-success" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">add
+        <button class="btn btn-outline-success" type="submit" routerLink="createemplooye">add
             employee</button>
     </div>
 </nav>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <form [formGroup]="forms" (ngSubmit)="clickHere()">
-                    <div class="mb-3">
-                        <label for="firstName" class="form-label">firstName</label>
-                        <input type="text" formControlName="firstName" class="form-control" id="firstName">
-                    </div>
-                    <div class="mb-3">
-                        <label for="lastName" class="form-label">lastName</label>
-                        <input type="text" formControlName="lastName" class="form-control" id="lastName">
-                    </div>
-                    <div class="mb-3">
-                        <label for="companyName" class="form-label">companyName</label>
-                        <input type="text" formControlName="companyName" class="form-control" id="companyName">
-                    </div>
-                    <div class="mb-3">
-                        <label for="number" class="form-label">number</label>
-                        <input type="tel" formControlName="number" class="form-control" id="number">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">email</label>
-                        <input type="email" formControlName="email" class="form-control" id="email">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button class="btn btn-primary" (click)="addEmployeeDetials(this.forms.value)" type="submit"
-                            [disabled]="this.forms.invalid">submit</button>
-                    </div>
-                </form>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
+<!--datapass-->
 <div class="container-fluid-mt-3">
     <div class="row justify-content-center">
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-8">
             <table class="table">
                 <thead>
                     <tr>
@@ -68,9 +30,11 @@
                         <td>{{form.companyName}}</td>
                         <td>{{form.number}}</td>
                         <td>{{form.email}}</td>
-                        <td><button routerLink="/update/{{form.id}}" class="btn btn-primary">Edit</button>&nbsp;
-                            <button class="btn btn-danger" (click)="deleteEmployeeDetials(form.id)">Delete</button>
-                        </td>
+                        <div>
+                            <td><button routerLink="/update/{{form.id}}" class="btn btn-primary">Edit</button>&nbsp;
+                                <button class="btn btn-danger" (click)="deleteEmployeeDetials(form.id)">Delete</button>
+                            </td>
+                        </div>
                     </tr>
                 </tbody>
             </table>

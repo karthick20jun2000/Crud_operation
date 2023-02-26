@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-12 col-lg-4">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form [formGroup]="forms">
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">firstName</label>
+                            <input type="text" formControlName="firstName" class="form-control" id="firstName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">lastName</label>
+                            <input type="text" formControlName="lastName" class="form-control" id="lastName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="companyName" class="form-label">companyName</label>
+                            <input type="text" formControlName="companyName" class="form-control" id="companyName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="number" class="form-label">number</label>
+                            <input type="tel" formControlName="number" class="form-control" id="number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">email</label>
+                            <input type="email" formControlName="email" class="form-control" id="email">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" routerLink="/">Close</button>
+                            <button class="btn btn-primary" (click)="createEmplooye(this.forms.value)" type="submit" [disabled]="this.forms.invalid">submit</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

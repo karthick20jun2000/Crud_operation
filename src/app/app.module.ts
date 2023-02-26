@@ -7,12 +7,14 @@ import { ViewEmployeeComponent } from './view-employee/view-employee.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { CreateEmplooyeComponent } from './create-emplooye/create-emplooye.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewEmployeeComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+    CreateEmplooyeComponent
   ],
   imports: [
     BrowserModule,

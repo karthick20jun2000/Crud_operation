@@ -19,28 +19,30 @@ export class UpdateEmployeeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+  this.fetchdata()
+    
+  }
+  fetchdata(){
     this.activeroute.paramMap.subscribe((param:Params)=>{
       this.dataid=param['get']("id")
       console.log('date id is',this.dataid)
     })
+    //fetch employee data
     this.apiServe.fetchData(this.dataid).subscribe((data:datamodel)=>{
 this.employee=data
     })
-
-    
   }
- 
-  updateEmployeeDetials(){
-    this.apiServe.updateEmployeeDetials(this.employee,this.dataid).subscribe((res:datamodel)=>{
+ //update employee detials
+  async updateEmployeeDetials(){
+    // this.apiServe.updateEmployeeDetials(this.employee,this.dataid).subscribe((res:datamodel)=>{
+    //   this.router.navigate(["/"])
+    // })
+    try {
+      const result:any=await this.apiServe.updateEmployeeDetials(this.employee,this.dataid)
       this.router.navigate(["/"])
-    })
+    } catch (error) {
+      
+    }
+
   }
-
-
-  
-
- 
-
- 
-
 }

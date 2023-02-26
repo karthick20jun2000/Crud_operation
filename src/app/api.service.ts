@@ -1,33 +1,39 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { datamodel } from './detials/detials.module';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-
+  
+APICall:any=environment.baseURL
   constructor(
-    private http:HttpClient
+    private http:HttpClient,
+   
   ) { }
-
-  addEmployeeDetials(data:datamodel){
-    return this.http.post<datamodel>('http://localhost:3000/posts', data) 
+  
+//createEmployeeDetials
+  createdEmployeeDetials(data:datamodel){
+    return this.http.post<datamodel>(this.APICall, data) .toPromise()
   }
+  //getEployeeDetials()
   getEployeeDetials(){
-    return this.http.get<datamodel[]>('http://localhost:3000/posts')
+    return this.http.get<datamodel[]>(`${this.APICall}`) .toPromise()
   }
-
+//deleteEployeeDetials
   deleteEployeeDetials(id:number){
-    return this.http.delete<datamodel>('http://localhost:3000/posts/'+id)
+  
+    return this.http.delete<datamodel>(`${this.APICall}/${id}`) .toPromise()
   }
-
+//fetchData()
   fetchData(id:number){
-    return this.http.get<datamodel>("http://localhost:3000/posts/"+id)
+    return this.http.get<datamodel>(`${this.APICall}/${id}`)
   }
-
+// updateEmployeeDetials()
   updateEmployeeDetials( data:datamodel,id:number){
-    return this.http.put<datamodel>("http://localhost:3000/posts/"+id,data)
+    return this.http.put<datamodel>(`${this.APICall}/${id}`,data) .toPromise()
   }
 }
